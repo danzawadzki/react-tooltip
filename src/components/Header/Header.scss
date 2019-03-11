@@ -1,0 +1,16 @@
+// @author Daniel Zawadzki <hello@danielzawadzki.com>
+
+.Header {
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    margin: 1rem 0 3rem 0;
+  }
+
+  &__logo {
+    max-height: 7.5rem;
+  }
+}
