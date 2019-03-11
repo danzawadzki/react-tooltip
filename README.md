@@ -1,6 +1,8 @@
 # 🏷 React-tooltip
 A tooltip component created using React hooks and ref.
 
+[Live demo](https://danzawadzki.github.io/react-tooltip/)
+
 ## ‍💻 Technologies & related stuff
 
 1. React
