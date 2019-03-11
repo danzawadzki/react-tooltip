@@ -1,0 +1,11 @@
+// @author Daniel Zawadzki <hello@danielzawadzki.com>
+
+.Footer {
+  font-size: 1rem;
+
+  & > a {
+    text-decoration: underline;
+    color: inherit;
+    font-weight: 500;
+  }
+}
