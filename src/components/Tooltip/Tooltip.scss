@@ -1,0 +1,121 @@
+// @author Daniel Zawadzki <hello@danielzawadzki.com>
+
+.Tooltip {
+  position: relative;
+  display: inline-flex;
+
+  &__toggler {
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__message {
+    position: relative;
+    background: white;
+    padding: 1.25rem 1.5rem;
+    white-space: pre;
+    text-decoration: none;
+    z-index: 2000;
+    color: black;
+    font-size: 1.325rem;
+
+    &::after {
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      content: '';
+      position: absolute;
+      z-index: 3000;
+    }
+
+    // Tooltip above a children
+    &--top {
+      bottom: 100%;
+      transform: translate(-50%);
+      margin-bottom: 12px;
+      position: absolute;
+      box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+
+      &::after {
+        border-top-color: white;
+        border-bottom: none;
+        bottom: -6px;
+        left: 50%;
+        margin-bottom: 0;
+      }
+    }
+
+    // Tooltip under a children
+    &--bottom {
+      top: 100%;
+      transform: translate(-50%);
+      margin-top: 12px;
+      position: absolute;
+      box-shadow: 0 -0.5rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+
+      &::after {
+        border-bottom-color: white;
+        border-top: none;
+        top: -6px;
+        left: 50%;
+        margin-top: 0;
+      }
+    }
+
+    // Tooltip on a children's right side
+    &--right {
+      top: 50%;
+      left: 100%;
+      margin-left: 12px;
+      position: absolute;
+      box-shadow: -0.5rem 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+
+      &::after {
+        border-right-color: white;
+        border-left: none;
+        top: 50%;
+        margin-top: -3px;
+        left: -6px;
+      }
+    }
+
+    // Tooltip on a children's left side
+    &--left {
+      top: 50%;
+      right: 100%;
+      margin-right: 12px;
+      position: absolute;
+      box-shadow: 0.5rem 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+
+      &::after {
+        border-left-color: white;
+        border-right: none;
+        top: 50%;
+        margin-top: -3px;
+        right: -6px;
+      }
+    }
+  }
+
+  // Classes required by react-transition-group package.
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transition: all 200ms;
+    opacity: 1;
+    max-height: 30rem;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    transition: all 200ms;
+    opacity: 0;
+  }
+}
